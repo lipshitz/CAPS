@@ -1,0 +1,20 @@
+# The following assumes that the module system has been used to load the GNU compiler
+# mpi c++ compiler, with whatever flag is required for openmp
+CC=CC -fopenmp
+# whatever options are necessary to link against the desired version of BLAS
+LIBS=-lsci_quadcore_mp
+
+CFLAGS= -O3 -Wall
+
+# set to the number of cores to be used per process
+THREADS= -DNUM_THREADS=6
+
+# uncomment for sanity checks to abort on invalid input; may slightly affect performance
+#SANITY= -DSANITY_CHECKS 
+# uncomment to use daxpy instead of openmp for additions; the best choice seems to be machine dependent
+#DAXPY= -DDAXPY
+
+DFLAGS = $(THREADS) $(SANITY) $(DAXPY)
+
+OFLAGS = $(CFLAGS) $(DFLAGS)
+BFLAGS = $(CFLAGS) $(DFLAGS) $(LIBS)

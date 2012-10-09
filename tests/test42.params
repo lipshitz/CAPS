@@ -1,0 +1,14 @@
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 1 -r 0 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 2 -r 0 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 3 -r 0 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 6 -r 0 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 7 -r 0 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 14 -r 0 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 21 -r 0 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 42 -r 0 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 1 -r 1 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 3 -r 1 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 7 -r 1 -c tests/test42.correct
+mpirun -n 1 ./fromfile1 -i tests/test42.in -b 21 -r 1 -c tests/test42.correct
+mpirun -n 7 ./fromfile1 -i tests/test42.in -b 1 -r 1 -c tests/test42.correct
+mpirun -n 7 ./fromfile1 -i tests/test42.in -b 3 -r 1 -c tests/test42.correct

@@ -1,0 +1,16 @@
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 1 -r 0 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 2 -r 0 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 4 -r 0 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 7 -r 0 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 14 -r 0 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 28 -r 0 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 1 -r 1 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 2 -r 1 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 7 -r 1 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 14 -r 1 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 1 -r 2 -c tests/test28.correct
+mpirun -n 1 ./fromfile1 -i tests/test28.in -b 7 -r 2 -c tests/test28.correct
+mpirun -n 7 ./fromfile1 -i tests/test28.in -b 1 -r 1 -c tests/test28.correct
+mpirun -n 7 ./fromfile1 -i tests/test28.in -b 2 -r 1 -c tests/test28.correct
+mpirun -n 7 ./fromfile1 -i tests/test28.in -b 1 -r 2 -c tests/test28.correct
+mpirun -n 49 ./fromfile1 -i tests/test28.in -b 1 -r 2 -c tests/test28.correct

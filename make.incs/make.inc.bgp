@@ -1,0 +1,30 @@
+# uncomment for sanity checks to abort on invalid input; may slightly affect performance
+# SANITY= -DSANITY_CHECKS 
+# uncomment to use daxpy instead of openmp for additions; the best choice seems to be machine dependent
+DAXPY= -DDAXPY
+
+CC     = /bgsys/drivers/ppcfloor/comm/fast/bin/mpixlcxx_r
+CFLAGS  = -O3 -qsmp=omp -DUSE_OMP -qtune=450 -qarch=450d -DVIRT_NTD=1
+CFLAGS += -D__STDC_LIMIT_MACROS
+AFLAGS  = -DBGP
+
+OPENMP  = -qsmp=omp -qthreaded
+PTHREADS= -pthread
+TBB     = -ltbb
+
+BGP_ESSL  = /soft/apps/ESSL-4.4.1-0
+BGP_LIBS  = -L$(BGP_ESSL)/lib -L/bgsys/ibm_compilers/sles10/prod/opt/ibmcmp/xlf/bg/11.1/bglib/ -L/soft/apps/ibmcmp/xlsmp/bg/1.7/bglib -L/soft/apps/ibmcmp/xlf/bg/11.1/bglib
+
+BLAS_INC  = -I$(BGP_ESSL)/include
+BLAS_LD   = $(BGP_LIBS)
+BLAS_LIBS = -lesslsmpbg -lmass -lxlfmath -lxlf90_r -lxlsmp -lxlomp_ser -lpthread
+BLAS      = $(BLAS_LD) $(BLAS_LIBS) $(BLAS_INC)
+SCALAPACK = -L/soft/apps/current/SCALAPACK -lscalapack -L/soft/apps/current/BLACS -lblacs_MPI-BGP-0 -lblacsCinit_MPI-BGP-0 -lblacs_MPI-BGP-0
+
+# set to the number of cores to be used per process
+THREADS= -DNUM_THREADS=4
+
+DFLAGS = $(THREADS) $(SANITY) $(DAXPY)
+
+OFLAGS = $(CFLAGS) $(DFLAGS) $(AFLAGS)
+BFLAGS = $(CFLAGS) $(AFLAGS) $(DFLAGS) $(LIBS) $(BLAS) $(LAPACK) $(BLAS) -lm
