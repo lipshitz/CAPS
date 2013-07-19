@@ -67,3 +67,9 @@ Settings in violation of this may run, especialy if the SANITY option is disable
 
 Use as a library:
 Use as a library is not recommended.  No efficient routines are provided for transforming between standard data layouts and those required by CAPS.
+
+Extensions:
+To see similar ideas applied to other algorithms see the subdirectories.  Detailed compilation and running instructions are not provided; see the Makefile and the main files in each directory.
+cholesky/: Recursive Cholesky factorization.  The algorithm is described in Chapter 5 of http://www.eecs.berkeley.edu/Pubs/TechRpts/2013/EECS-2013-100.pdf
+rect-class/: Recursive rectangular classical matrix multiplication.  The algorithm and benchmarking data are described in http://www.eecs.berkeley.edu/Pubs/TechRpts/2012/EECS-2012-205.pdf
+sparse/: Several sparse matrix multiplication algorithms are implemented.  The algorithms are described in http://www.eecs.berkeley.edu/Pubs/TechRpts/2013/EECS-2013-13.pdf and benchmarking results are in Chapter 4 of http://www.eecs.berkeley.edu/Pubs/TechRpts/2013/EECS-2013-100.pdf

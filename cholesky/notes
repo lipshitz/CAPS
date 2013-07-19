@@ -1,0 +1,1 @@
+Although the sub-matrices don't have to divide equally among the processors, every processor must have at least one entry of each submatrix.  Thus, (n/2^r)*(n/2^r+1)/2 must be at least P.
